@@ -136,7 +136,7 @@
             document.getElementById(`translation-${index}`).style.display = "block";
             playAudio(index); // Automatically play audio
             revealedTranslations[index] = true; // Mark translation as revealed
-            document.getElementById("next-btn").disabled = false; // Enable next button
+            updateNextButton(); // Ensure "Next" stays active for revealed words
         }
 
         function playAudio(index) {
@@ -148,8 +148,7 @@
             document.getElementById(`word-${index}`).classList.add('active');
 
             document.getElementById("prev-btn").disabled = (index === 0);
-            // Keep next button enabled if translation was revealed before
-            document.getElementById("next-btn").disabled = !revealedTranslations[index];
+            updateNextButton(); // Ensure "Next" button is correctly updated
         }
 
         function nextWord() {
@@ -164,6 +163,10 @@
                 currentWord--;
                 showWord(currentWord);
             }
+        }
+
+        function updateNextButton() {
+            document.getElementById("next-btn").disabled = !revealedTranslations[currentWord];
         }
     </script>
 
