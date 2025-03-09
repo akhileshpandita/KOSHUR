@@ -112,24 +112,39 @@
 
         <!-- New Words -->
         <div class="word-container" id="word-5">
-            <img src="bread.jpg" alt="Bread">
-            <button class="word" onclick="revealTranslation(5)">Bread</button>
-            <p class="translation" id="translation-5" onclick="playAudio(5)">ʦͻci</p>
-            <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
+            <button class="word" onclick="revealTranslation(5)">Cucumber</button>
+            <p class="translation" id="translation-5" onclick="playAudio(5)">lə̄r</p>
+            <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02376.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-6">
-            <img src="rice.jpg" alt="Rice">
-            <button class="word" onclick="revealTranslation(6)">Rice</button>
-            <p class="translation" id="translation-6" onclick="playAudio(6)">batι</p>
-            <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00550.mp3"></audio>
+            <button class="word" onclick="revealTranslation(6)">Stupid</button>
+            <p class="translation" id="translation-6" onclick="playAudio(6)">bēkιl</p>
+            <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00643.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-7">
-            <img src="cardamom.jpg" alt="Cardamom">
-            <button class="word" onclick="revealTranslation(7)">Cardamom</button>
-            <p class="translation" id="translation-7" onclick="playAudio(7)">ə̄l</p>
-            <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04890.mp3"></audio>
+            <button class="word" onclick="revealTranslation(7)">Darkness</button>
+            <p class="translation" id="translation-7" onclick="playAudio(7)">anigaṭι</p>
+            <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00220.mp3"></audio>
+        </div>
+
+        <div class="word-container" id="word-8">
+            <button class="word" onclick="revealTranslation(8)">Ladder</button>
+            <p class="translation" id="translation-8" onclick="playAudio(8)">hēr</p>
+            <audio id="audio-8" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01521.mp3"></audio>
+        </div>
+
+        <div class="word-container" id="word-9">
+            <button class="word" onclick="revealTranslation(9)">Finger</button>
+            <p class="translation" id="translation-9" onclick="playAudio(9)">uⁿgij</p>
+            <audio id="audio-9" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04402.mp3"></audio>
+        </div>
+
+        <div class="word-container" id="word-10">
+            <button class="word" onclick="revealTranslation(10)">Blind</button>
+            <p class="translation" id="translation-10" onclick="playAudio(10)">on</p>
+            <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
         </div>
 
     </div>
@@ -141,7 +156,7 @@
 
     <script>
         let currentWord = 0;
-        const totalWords = 8; // Update to match new total word count
+        const totalWords = 11;
 
         function revealTranslation(index) {
             document.getElementById(`translation-${index}`).style.visibility = "visible";
@@ -153,25 +168,18 @@
         }
 
         function showWord(index) {
-            document.querySelectorAll('.word-container').forEach((el) => el.classList.remove('active'));
+            document.querySelectorAll('.word-container').forEach(el => el.classList.remove('active'));
             document.getElementById(`word-${index}`).classList.add('active');
-
-            document.getElementById("prev-btn").disabled = (index === 0);
-            document.getElementById("next-btn").disabled = (index === totalWords - 1);
         }
 
         function nextWord() {
-            if (currentWord < totalWords - 1) {
-                currentWord++;
-                showWord(currentWord);
-            }
+            if (currentWord < totalWords - 1) currentWord++;
+            showWord(currentWord);
         }
 
         function prevWord() {
-            if (currentWord > 0) {
-                currentWord--;
-                showWord(currentWord);
-            }
+            if (currentWord > 0) currentWord--;
+            showWord(currentWord);
         }
     </script>
 
