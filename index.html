@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Kath Baath</title>
   <style>
     body {
@@ -16,16 +16,22 @@
       justify-content: flex-start; /* Align content to the top */
       min-height: 100vh;
     }
+
+    /* Title styling */
     h1 {
       font-size: 3.5em;
-      color: #007bff;
-      margin-top: 20px;   /* Reduced top margin */
-      margin-bottom: 10px; /* Reduced bottom margin */
+      color: #007bff; /* Same blue as the button */
+      margin-top: 20px;   /* Adjust to move title down or up */
+      margin-bottom: 5px; /* Adjust to increase/decrease space after title */
     }
+
+    /* Subtitle/description styling */
     p {
       margin: 0;
-      margin-bottom: 30px;
+      margin-bottom: 30px; /* Increase/decrease for more/less space before images */
     }
+
+    /* Container for each word */
     .word-container {
       display: none;
       text-align: center;
@@ -33,11 +39,15 @@
     .word-container.active {
       display: block;
     }
+
+    /* Image styling */
     img {
       width: 300px;
       height: auto;
       margin-bottom: 20px;
     }
+
+    /* Button for the English word */
     .word {
       background-color: #007bff;
       color: white;
@@ -50,6 +60,8 @@
       width: 220px;
       border-radius: 5px;
     }
+
+    /* Hidden translation text */
     .translation {
       visibility: hidden;
       font-size: 22px;
@@ -58,6 +70,8 @@
       cursor: pointer;
       min-height: 30px;
     }
+
+    /* Navigation buttons */
     .nav-buttons {
       margin-top: 30px;
     }
@@ -75,7 +89,8 @@
   <p>Click the word to reveal translation</p>
 
   <div id="words-container">
-    <!-- Updated Translations for Original Words -->
+
+    <!-- Word 0 -->
     <div class="word-container active" id="word-0">
       <img src="apple.jpg" alt="Apple">
       <button class="word" onclick="revealTranslation(0)">Apple</button>
@@ -83,6 +98,7 @@
       <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
     </div>
 
+    <!-- Word 1 -->
     <div class="word-container" id="word-1">
       <img src="mother.jpg" alt="Mother">
       <button class="word" onclick="revealTranslation(1)">Mother</button>
@@ -90,6 +106,7 @@
       <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
     </div>
 
+    <!-- Word 2 -->
     <div class="word-container" id="word-2">
       <img src="thief.jpg" alt="Thief">
       <button class="word" onclick="revealTranslation(2)">Thief</button>
@@ -97,6 +114,7 @@
       <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
     </div>
 
+    <!-- Word 3 -->
     <div class="word-container" id="word-3">
       <img src="work.jpg" alt="Work">
       <button class="word" onclick="revealTranslation(3)">Work</button>
@@ -104,6 +122,7 @@
       <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
     </div>
 
+    <!-- Word 4 -->
     <div class="word-container" id="word-4">
       <img src="apricot.jpg" alt="Apricot">
       <button class="word" onclick="revealTranslation(4)">Apricot</button>
@@ -111,7 +130,7 @@
       <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
     </div>
 
-    <!-- New Words -->
+    <!-- Word 5 -->
     <div class="word-container" id="word-5">
       <img src="cucumber.jpg" alt="Cucumber">
       <button class="word" onclick="revealTranslation(5)">Cucumber</button>
@@ -119,6 +138,7 @@
       <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02376.mp3"></audio>
     </div>
 
+    <!-- Word 6 -->
     <div class="word-container" id="word-6">
       <img src="stupid.jpg" alt="Stupid">
       <button class="word" onclick="revealTranslation(6)">Stupid</button>
@@ -126,6 +146,7 @@
       <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00643.mp3"></audio>
     </div>
 
+    <!-- Word 7 -->
     <div class="word-container" id="word-7">
       <img src="darkness.jpg" alt="Darkness">
       <button class="word" onclick="revealTranslation(7)">Darkness</button>
@@ -133,6 +154,7 @@
       <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00220.mp3"></audio>
     </div>
 
+    <!-- Word 8 -->
     <div class="word-container" id="word-8">
       <img src="ladder.jpg" alt="Ladder">
       <button class="word" onclick="revealTranslation(8)">Ladder</button>
@@ -140,6 +162,7 @@
       <audio id="audio-8" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01521.mp3"></audio>
     </div>
 
+    <!-- Word 9 -->
     <div class="word-container" id="word-9">
       <img src="finger.jpg" alt="Finger">
       <button class="word" onclick="revealTranslation(9)">Finger</button>
@@ -147,6 +170,7 @@
       <audio id="audio-9" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04402.mp3"></audio>
     </div>
 
+    <!-- Word 10 -->
     <div class="word-container" id="word-10">
       <img src="blind.jpg" alt="Blind">
       <button class="word" onclick="revealTranslation(10)">Blind</button>
@@ -154,6 +178,7 @@
       <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
     </div>
 
+    <!-- Word 11 -->
     <div class="word-container" id="word-11">
       <img src="bread.jpg" alt="Bread">
       <button class="word" onclick="revealTranslation(11)">Bread</button>
@@ -161,6 +186,7 @@
       <audio id="audio-11" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
     </div>
     
+    <!-- Word 12 -->
     <div class="word-container" id="word-12">
       <img src="mouth.jpg" alt="Mouth">
       <button class="word" onclick="revealTranslation(12)">Mouth</button>
@@ -168,6 +194,7 @@
       <audio id="audio-12" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00811.mp3"></audio>
     </div>
     
+    <!-- Word 13 -->
     <div class="word-container" id="word-13">
       <img src="bridge.jpg" alt="Bridge">
       <button class="word" onclick="revealTranslation(13)">Bridge</button>
@@ -185,25 +212,42 @@
     let currentWord = 0;
     const totalWords = 14;
 
+    // Track whether each word's translation has been revealed
+    let revealedTranslations = new Array(totalWords).fill(false);
+
+    // Reveal translation for the given index
     function revealTranslation(index) {
       document.getElementById(`translation-${index}`).style.visibility = "visible";
+      revealedTranslations[index] = true;   // Mark as revealed
       playAudio(index);
+      updateNavButtons();                  // Re-check button states
     }
 
+    // Play the audio for the given index
     function playAudio(index) {
       document.getElementById(`audio-${index}`).play();
     }
 
+    // Show the word container for the given index
     function showWord(index) {
       document.querySelectorAll('.word-container').forEach(el => el.classList.remove('active'));
       document.getElementById(`word-${index}`).classList.add('active');
     }
 
+    // Update the disabled state of the navigation buttons
     function updateNavButtons() {
-      document.getElementById('prev-btn').disabled = currentWord === 0;
-      document.getElementById('next-btn').disabled = currentWord === totalWords - 1;
+      // Disable "Previous" if on the first word
+      document.getElementById('prev-btn').disabled = (currentWord === 0);
+
+      // Disable "Next" if on the last word OR if the current word isn't revealed yet
+      if (currentWord === totalWords - 1) {
+        document.getElementById('next-btn').disabled = true;
+      } else {
+        document.getElementById('next-btn').disabled = !revealedTranslations[currentWord];
+      }
     }
 
+    // Go to the next word if available
     function nextWord() {
       if (currentWord < totalWords - 1) {
         currentWord++;
@@ -212,6 +256,7 @@
       }
     }
 
+    // Go to the previous word if available
     function prevWord() {
       if (currentWord > 0) {
         currentWord--;
@@ -220,7 +265,7 @@
       }
     }
 
-    // Initialize navigation buttons when the page loads
+    // Initialize the navigation buttons on page load
     updateNavButtons();
   </script>
 
