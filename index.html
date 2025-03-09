@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 0px 20px;
+            margin: 10px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -16,12 +16,12 @@
             height: 100vh;
         }
         h1 {
-            font-size: 3em; /* Increased size by 1.5 times */
-            color: #007bff; /* Changed to dark green */
-            margin-top: 5px; /* Reduced gap from the top */
+            font-size: 2.25em;
+            color: #007bff; /* Same blue as button */
+            margin-top: 10px;
         }
         p {
-            margin-top: 0px; /* Reduce gap from title */
+            margin-top: 5px;
             margin-bottom: 20px;
         }
         .word-container {
@@ -49,12 +49,12 @@
             border-radius: 5px;
         }
         .translation {
-            visibility: hidden; /* Keep space reserved, but hidden initially */
+            visibility: hidden;
             font-size: 22px;
             color: green;
             margin-top: 15px;
             cursor: pointer;
-            min-height: 30px; /* Reserve space so elements don’t shift */
+            min-height: 30px;
         }
         .nav-buttons {
             margin-top: 30px;
@@ -74,39 +74,62 @@
 
     <div id="words-container">
 
+        <!-- Updated Translations for Original Words -->
         <div class="word-container active" id="word-0">
             <img src="apple.jpg" alt="Apple">
             <button class="word" onclick="revealTranslation(0)">Apple</button>
-            <p class="translation" id="translation-0" onclick="playAudio(0)">Tsoonth (تسونتھ)</p>
+            <p class="translation" id="translation-0" onclick="playAudio(0)">ʦūⁿṭ</p>
             <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-1">
             <img src="mother.jpg" alt="Mother">
             <button class="word" onclick="revealTranslation(1)">Mother</button>
-            <p class="translation" id="translation-1" onclick="playAudio(1)">Maej (ماج)</p>
+            <p class="translation" id="translation-1" onclick="playAudio(1)">mə̄j</p>
             <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-2">
             <img src="thief.jpg" alt="Thief">
             <button class="word" onclick="revealTranslation(2)">Thief</button>
-            <p class="translation" id="translation-2" onclick="playAudio(2)">Tsoor (چور)</p>
+            <p class="translation" id="translation-2" onclick="playAudio(2)">ʦūr</p>
             <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-3">
             <img src="work.jpg" alt="Work">
             <button class="word" onclick="revealTranslation(3)">Work</button>
-            <p class="translation" id="translation-3" onclick="playAudio(3)">Kaem (کام)</p>
+            <p class="translation" id="translation-3" onclick="playAudio(3)">kə̄m</p>
             <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-4">
             <img src="apricot.jpg" alt="Apricot">
             <button class="word" onclick="revealTranslation(4)">Apricot</button>
-            <p class="translation" id="translation-4" onclick="playAudio(4)">Tsyer (څیر)</p>
+            <p class="translation" id="translation-4" onclick="playAudio(4)">ʦēr</p>
             <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
+        </div>
+
+        <!-- New Words -->
+        <div class="word-container" id="word-5">
+            <img src="bread.jpg" alt="Bread">
+            <button class="word" onclick="revealTranslation(5)">Bread</button>
+            <p class="translation" id="translation-5" onclick="playAudio(5)">ʦͻci</p>
+            <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
+        </div>
+
+        <div class="word-container" id="word-6">
+            <img src="rice.jpg" alt="Rice">
+            <button class="word" onclick="revealTranslation(6)">Rice</button>
+            <p class="translation" id="translation-6" onclick="playAudio(6)">batι</p>
+            <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00550.mp3"></audio>
+        </div>
+
+        <div class="word-container" id="word-7">
+            <img src="cardamom.jpg" alt="Cardamom">
+            <button class="word" onclick="revealTranslation(7)">Cardamom</button>
+            <p class="translation" id="translation-7" onclick="playAudio(7)">ə̄l</p>
+            <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04890.mp3"></audio>
         </div>
 
     </div>
@@ -118,10 +141,10 @@
 
     <script>
         let currentWord = 0;
-        const totalWords = 5;
+        const totalWords = 8; // Update to match new total word count
 
         function revealTranslation(index) {
-            document.getElementById(`translation-${index}`).style.visibility = "visible"; // Fixes broken function
+            document.getElementById(`translation-${index}`).style.visibility = "visible";
             playAudio(index);
         }
 
