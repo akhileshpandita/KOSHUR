@@ -16,12 +16,13 @@
             height: 100vh;
         }
         h1 {
-            font-size: 2.25em; /* Increased size by 1.5 times */
-            color: darkgreen; /* Changed to dark green */
+            font-size: 3em; /* Increased size by 1.5 times */
+            color: #007bff; /* Changed to dark green */
             margin-top: 10px; /* Reduced gap from the top */
         }
         p {
-            margin-bottom: 40px;
+            margin-top: 5px; /* Reduce gap from title */
+            margin-bottom: 20px;
         }
         .word-container {
             display: none;
@@ -48,12 +49,12 @@
             border-radius: 5px;
         }
         .translation {
-            visibility: hidden; /* Instead of display: none */
+            visibility: hidden; /* Keep space reserved, but hidden initially */
             font-size: 22px;
             color: green;
             margin-top: 15px;
             cursor: pointer;
-            min-height: 30px; 
+            min-height: 30px; /* Reserve space so elements don’t shift */
         }
         .nav-buttons {
             margin-top: 30px;
@@ -120,10 +121,8 @@
         const totalWords = 5;
 
         function revealTranslation(index) {
-            document.getElementById(`translation-${index}`).style.visibility = "visible"; // Change from display to visibility
+            document.getElementById(`translation-${index}`).style.visibility = "visible"; // Fixes broken function
             playAudio(index);
-}
-
         }
 
         function playAudio(index) {
