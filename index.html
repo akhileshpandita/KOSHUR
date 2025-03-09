@@ -1,214 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kath Baath</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 3.5em;
-            color: #007bff; /* Same blue as button */
-            margin-top: 0px;
-        }
-        p {
-            margin-top: 0px;
-            margin-bottom: 10px;
-        }
-        .word-container {
-            display: none;
-            text-align: center;
-        }
-        .word-container.active {
-            display: block;
-        }
-        img {
-            width: 300px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .word {
-            background-color: #007bff;
-            color: white;
-            padding: 12px;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-            display: block;
-            margin: 10px auto;
-            width: 220px;
-            border-radius: 5px;
-        }
-        .translation {
-            visibility: hidden;
-            font-size: 22px;
-            color: green;
-            margin-top: 15px;
-            cursor: pointer;
-            min-height: 30px;
-        }
-        .nav-buttons {
-            margin-top: 30px;
-        }
-        .nav-buttons button {
-            padding: 10px 15px;
-            margin: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kath Baath</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3.5em;
+      color: #007bff; /* Same blue as button */
+      margin-top: 0px;
+    }
+    p {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+    .word-container {
+      display: none;
+      text-align: center;
+    }
+    .word-container.active {
+      display: block;
+    }
+    img {
+      width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .word {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+      width: 220px;
+      border-radius: 5px;
+    }
+    .translation {
+      visibility: hidden;
+      font-size: 22px;
+      color: green;
+      margin-top: 15px;
+      cursor: pointer;
+      min-height: 30px;
+    }
+    .nav-buttons {
+      margin-top: 30px;
+    }
+    .nav-buttons button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Kath Baath</h1>
-    <p>Click the word to reveal translation</p>
+  <h1>Kath Baath</h1>
+  <p>Click the word to reveal translation</p>
 
-    <div id="words-container">
+  <div id="words-container">
+    <!-- Updated Translations for Original Words -->
+    <div class="word-container active" id="word-0">
+      <img src="apple.jpg" alt="Apple">
+      <button class="word" onclick="revealTranslation(0)">Apple</button>
+      <p class="translation" id="translation-0" onclick="playAudio(0)">ʦūⁿṭ</p>
+      <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
+    </div>
 
-        <!-- Updated Translations for Original Words -->
-        <div class="word-container active" id="word-0">
-            <img src="apple.jpg" alt="Apple">
-            <button class="word" onclick="revealTranslation(0)">Apple</button>
-            <p class="translation" id="translation-0" onclick="playAudio(0)">ʦūⁿṭ</p>
-            <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-1">
+      <img src="mother.jpg" alt="Mother">
+      <button class="word" onclick="revealTranslation(1)">Mother</button>
+      <p class="translation" id="translation-1" onclick="playAudio(1)">mə̄j</p>
+      <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-1">
-            <img src="mother.jpg" alt="Mother">
-            <button class="word" onclick="revealTranslation(1)">Mother</button>
-            <p class="translation" id="translation-1" onclick="playAudio(1)">mə̄j</p>
-            <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-2">
+      <img src="thief.jpg" alt="Thief">
+      <button class="word" onclick="revealTranslation(2)">Thief</button>
+      <p class="translation" id="translation-2" onclick="playAudio(2)">ʦūr</p>
+      <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-2">
-            <img src="thief.jpg" alt="Thief">
-            <button class="word" onclick="revealTranslation(2)">Thief</button>
-            <p class="translation" id="translation-2" onclick="playAudio(2)">ʦūr</p>
-            <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-3">
+      <img src="work.jpg" alt="Work">
+      <button class="word" onclick="revealTranslation(3)">Work</button>
+      <p class="translation" id="translation-3" onclick="playAudio(3)">kə̄m</p>
+      <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-3">
-            <img src="work.jpg" alt="Work">
-            <button class="word" onclick="revealTranslation(3)">Work</button>
-            <p class="translation" id="translation-3" onclick="playAudio(3)">kə̄m</p>
-            <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-4">
+      <img src="apricot.jpg" alt="Apricot">
+      <button class="word" onclick="revealTranslation(4)">Apricot</button>
+      <p class="translation" id="translation-4" onclick="playAudio(4)">ʦēr</p>
+      <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-4">
-            <img src="apricot.jpg" alt="Apricot">
-            <button class="word" onclick="revealTranslation(4)">Apricot</button>
-            <p class="translation" id="translation-4" onclick="playAudio(4)">ʦēr</p>
-            <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
-        </div>
+    <!-- New Words -->
+    <div class="word-container" id="word-5">
+      <img src="cucumber.jpg" alt="Cucumber">
+      <button class="word" onclick="revealTranslation(5)">Cucumber</button>
+      <p class="translation" id="translation-5" onclick="playAudio(5)">lə̄r</p>
+      <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02376.mp3"></audio>
+    </div>
 
-        <!-- New Words -->
-        <div class="word-container" id="word-5">
-            <img src="cucumber.jpg" alt="Cucumber">
-            <button class="word" onclick="revealTranslation(5)">Cucumber</button>
-            <p class="translation" id="translation-5" onclick="playAudio(5)">lə̄r</p>
-            <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02376.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-6">
+      <img src="stupid.jpg" alt="Stupid">
+      <button class="word" onclick="revealTranslation(6)">Stupid</button>
+      <p class="translation" id="translation-6" onclick="playAudio(6)">bēkιl</p>
+      <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00643.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-6">
-            <img src="stupid.jpg" alt="Stupid">
-            <button class="word" onclick="revealTranslation(6)">Stupid</button>
-            <p class="translation" id="translation-6" onclick="playAudio(6)">bēkιl</p>
-            <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00643.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-7">
+      <img src="darkness.jpg" alt="Darkness">
+      <button class="word" onclick="revealTranslation(7)">Darkness</button>
+      <p class="translation" id="translation-7" onclick="playAudio(7)">anigaṭι</p>
+      <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00220.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-7">
-            <img src="darkness.jpg" alt="Darkness">
-            <button class="word" onclick="revealTranslation(7)">Darkness</button>
-            <p class="translation" id="translation-7" onclick="playAudio(7)">anigaṭι</p>
-            <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00220.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-8">
+      <img src="ladder.jpg" alt="Ladder">
+      <button class="word" onclick="revealTranslation(8)">Ladder</button>
+      <p class="translation" id="translation-8" onclick="playAudio(8)">hēr</p>
+      <audio id="audio-8" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01521.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-8">
-            <img src="ladder.jpg" alt="Ladder">
-            <button class="word" onclick="revealTranslation(8)">Ladder</button>
-            <p class="translation" id="translation-8" onclick="playAudio(8)">hēr</p>
-            <audio id="audio-8" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01521.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-9">
+      <img src="finger.jpg" alt="Finger">
+      <button class="word" onclick="revealTranslation(9)">Finger</button>
+      <p class="translation" id="translation-9" onclick="playAudio(9)">uⁿgij</p>
+      <audio id="audio-9" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04402.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-9">
-            <img src="finger.jpg" alt="Finger">
-            <button class="word" onclick="revealTranslation(9)">Finger</button>
-            <p class="translation" id="translation-9" onclick="playAudio(9)">uⁿgij</p>
-            <audio id="audio-9" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04402.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-10">
+      <img src="blind.jpg" alt="Blind">
+      <button class="word" onclick="revealTranslation(10)">Blind</button>
+      <p class="translation" id="translation-10" onclick="playAudio(10)">on</p>
+      <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
+    </div>
 
-        <div class="word-container" id="word-10">
-            <img src="blind.jpg" alt="Blind">
-            <button class="word" onclick="revealTranslation(10)">Blind</button>
-            <p class="translation" id="translation-10" onclick="playAudio(10)">on</p>
-            <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
-        </div>
-
-        <div class="word-container" id="word-11">
-            <img src="bread.jpg" alt="Bread">
-            <button class="word" onclick="revealTranslation(11)">Bread</button>
-            <p class="translation" id="translation-11" onclick="playAudio(11)">ʦͻci</p>
-            <audio id="audio-11" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
-        </div>
-        
-        <div class="word-container" id="word-12">
-            <img src="mouth.jpg" alt="Mouth">
-            <button class="word" onclick="revealTranslation(12)">Mouth</button>
-            <p class="translation" id="translation-12" onclick="playAudio(12)">cōⁿṭʰ</p>
-            <audio id="audio-12" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00811.mp3"></audio>
-        </div>
-        
-        <div class="word-container" id="word-13">
-            <img src="bridge.jpg" alt="Bridge">
-            <button class="word" onclick="revealTranslation(13)">Bridge</button>
-            <p class="translation" id="translation-13" onclick="playAudio(13)">kǝdιl</p>
-            <audio id="audio-13" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01880.mp3"></audio>
-        </div>
+    <div class="word-container" id="word-11">
+      <img src="bread.jpg" alt="Bread">
+      <button class="word" onclick="revealTranslation(11)">Bread</button>
+      <p class="translation" id="translation-11" onclick="playAudio(11)">ʦͻci</p>
+      <audio id="audio-11" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
+    </div>
     
+    <div class="word-container" id="word-12">
+      <img src="mouth.jpg" alt="Mouth">
+      <button class="word" onclick="revealTranslation(12)">Mouth</button>
+      <p class="translation" id="translation-12" onclick="playAudio(12)">cōⁿṭʰ</p>
+      <audio id="audio-12" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00811.mp3"></audio>
     </div>
-
-    <div class="nav-buttons">
-        <button onclick="prevWord()" id="prev-btn" disabled>Previous</button>
-        <button onclick="nextWord()" id="next-btn">Next</button>
+    
+    <div class="word-container" id="word-13">
+      <img src="bridge.jpg" alt="Bridge">
+      <button class="word" onclick="revealTranslation(13)">Bridge</button>
+      <p class="translation" id="translation-13" onclick="playAudio(13)">kǝdιl</p>
+      <audio id="audio-13" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01880.mp3"></audio>
     </div>
+  </div>
 
-    <script>
-        let currentWord = 0;
-        const totalWords = 14;
+  <div class="nav-buttons">
+    <button onclick="prevWord()" id="prev-btn" disabled>Previous</button>
+    <button onclick="nextWord()" id="next-btn">Next</button>
+  </div>
 
-        function revealTranslation(index) {
-            document.getElementById(`translation-${index}`).style.visibility = "visible";
-            playAudio(index);
-        }
+  <script>
+    let currentWord = 0;
+    const totalWords = 14;
 
-        function playAudio(index) {
-            document.getElementById(`audio-${index}`).play();
-        }
+    function revealTranslation(index) {
+      document.getElementById(`translation-${index}`).style.visibility = "visible";
+      playAudio(index);
+    }
 
-        function showWord(index) {
-            document.querySelectorAll('.word-container').forEach(el => el.classList.remove('active'));
-            document.getElementById(`word-${index}`).classList.add('active');
-        }
+    function playAudio(index) {
+      document.getElementById(`audio-${index}`).play();
+    }
 
-        function nextWord() {
-            if (currentWord < totalWords - 1) currentWord++;
-            showWord(currentWord);
-        }
+    function showWord(index) {
+      document.querySelectorAll('.word-container').forEach(el => el.classList.remove('active'));
+      document.getElementById(`word-${index}`).classList.add('active');
+    }
 
-        function prevWord() {
-            if (currentWord > 0) currentWord--;
-            showWord(currentWord);
-        }
-    </script>
+    function updateNavButtons() {
+      // Disable "Previous" if on the first word and "Next" if on the last word
+      document.getElementById('prev-btn').disabled = currentWord === 0;
+      document.getElementById('next-btn').disabled = currentWord === totalWords - 1;
+    }
+
+    function nextWord() {
+      if (currentWord < totalWords - 1) {
+        currentWord++;
+        showWord(currentWord);
+        updateNavButtons();
+      }
+    }
+
+    function prevWord() {
+      if (currentWord > 0) {
+        currentWord--;
+        showWord(currentWord);
+        updateNavButtons();
+      }
+    }
+
+    // Initialize navigation buttons when the page loads
+    updateNavButtons();
+  </script>
 
 </body>
 </html>
