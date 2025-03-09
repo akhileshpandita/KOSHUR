@@ -147,6 +147,24 @@
             <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
         </div>
 
+        <div class="word-container" id="word-11">
+            <button class="word" onclick="revealTranslation(11)">Bread</button>
+            <p class="translation" id="translation-11" onclick="playAudio(11)">ʦͻci</p>
+            <audio id="audio-11" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
+        </div>
+        
+        <div class="word-container" id="word-12">
+            <button class="word" onclick="revealTranslation(12)">Mouth</button>
+            <p class="translation" id="translation-12" onclick="playAudio(12)">cōⁿṭʰ</p>
+            <audio id="audio-12" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00811.mp3"></audio>
+        </div>
+        
+        <div class="word-container" id="word-13">
+            <button class="word" onclick="revealTranslation(13)">Bridge</button>
+            <p class="translation" id="translation-13" onclick="playAudio(13)">kǝdιl</p>
+            <audio id="audio-13" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01880.mp3"></audio>
+        </div>
+    
     </div>
 
     <div class="nav-buttons">
@@ -156,7 +174,7 @@
 
     <script>
         let currentWord = 0;
-        const totalWords = 11;
+        const totalWords = 14;
 
         function revealTranslation(index) {
             document.getElementById(`translation-${index}`).style.visibility = "visible";
