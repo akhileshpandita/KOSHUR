@@ -17,13 +17,13 @@
         }
         h1 {
             color: blue;
-            font-size: 36px;
-            margin-top: 5px; /* Adjust spacing from top */
-            margin-bottom: 10px; /* Adjust spacing between title and description */
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         p {
             font-size: 18px;
-            margin-bottom: 30px; /* Adjust spacing */
+            margin-bottom: 30px;
         }
         .word-container {
             display: none;
@@ -73,7 +73,7 @@
             width: 50px;
         }
         .nav-buttons button:disabled {
-            background-color: #cccccc; /* Grey out when disabled */
+            background-color: #cccccc;
             cursor: not-allowed;
         }
     </style>
@@ -130,11 +130,13 @@
     <script>
         let currentWord = 0;
         const totalWords = 5;
+        let revealedTranslations = new Array(totalWords).fill(false); // Track revealed translations
 
         function revealTranslation(index) {
             document.getElementById(`translation-${index}`).style.display = "block";
             playAudio(index); // Automatically play audio
-            document.getElementById("next-btn").disabled = false; // Enable next button after translation is revealed
+            revealedTranslations[index] = true; // Mark translation as revealed
+            document.getElementById("next-btn").disabled = false; // Enable next button
         }
 
         function playAudio(index) {
@@ -146,7 +148,8 @@
             document.getElementById(`word-${index}`).classList.add('active');
 
             document.getElementById("prev-btn").disabled = (index === 0);
-            document.getElementById("next-btn").disabled = true; // Disable next button until translation is revealed
+            // Keep next button enabled if translation was revealed before
+            document.getElementById("next-btn").disabled = !revealedTranslations[index];
         }
 
         function nextWord() {
