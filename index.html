@@ -1,6 +1,93 @@
-<html>
-<head><title>Test Page</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Kashmiri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .word-container {
+            margin: 20px 0;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .word {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+        }
+        .word.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .translation {
+            display: none;
+            font-size: 18px;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
-    <h1>Want to learn Koshu?</h1>
+
+    <h1>Learn Kashmiri</h1>
+    <p>Click on the words below to reveal their Kashmiri translations.</p>
+
+    <div id="words-container">
+        <div class="word-container">
+            <img src="https://via.placeholder.com/300" alt="Apple"> <!-- Replace with real image -->
+            <button class="word" onclick="revealTranslation(0)">Apple</button>
+            <p class="translation" id="translation-0">🍎 Tsoonth (تسونتھ)</p>
+        </div>
+
+        <div class="word-container">
+            <img src="https://via.placeholder.com/300" alt="Mother"> <!-- Replace with real image -->
+            <button class="word disabled" onclick="revealTranslation(1)">Mother</button>
+            <p class="translation" id="translation-1">👩‍👦 Maej (ماج)</p>
+        </div>
+
+        <div class="word-container">
+            <img src="https://via.placeholder.com/300" alt="Thief"> <!-- Replace with real image -->
+            <button class="word disabled" onclick="revealTranslation(2)">Thief</button>
+            <p class="translation" id="translation-2">🦹‍♂️ Tsoor (چور)</p>
+        </div>
+
+        <div class="word-container">
+            <img src="https://via.placeholder.com/300" alt="Work"> <!-- Replace with real image -->
+            <button class="word disabled" onclick="revealTranslation(3)">Work</button>
+            <p class="translation" id="translation-3">💼 Kaem (کام)</p>
+        </div>
+
+        <div class="word-container">
+            <img src="https://via.placeholder.com/300" alt="Apricot"> <!-- Replace with real image -->
+            <button class="word disabled" onclick="revealTranslation(4)">Apricot</button>
+            <p class="translation" id="translation-4">🍑 Tsyer (څیر)</p>
+        </div>
+    </div>
+
+    <script>
+        function revealTranslation(index) {
+            document.getElementById(`translation-${index}`).style.display = "block";
+            let words = document.querySelectorAll('.word');
+            if (index + 1 < words.length) {
+                words[index + 1].classList.remove('disabled');
+            }
+        }
+    </script>
+
 </body>
 </html>
