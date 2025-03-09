@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            margin: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -16,14 +16,10 @@
             height: 100vh;
         }
         h1 {
-            color: blue;
-            font-size: 28px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 18px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .word-container {
             display: none;
@@ -58,30 +54,19 @@
         }
         .nav-buttons {
             margin-top: 30px;
-            display: flex;
-            justify-content: center;
         }
         .nav-buttons button {
-            padding: 10px;
+            padding: 10px 15px;
             margin: 5px;
-            font-size: 20px;
+            font-size: 16px;
             cursor: pointer;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-            width: 50px;
-        }
-        .nav-buttons button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
         }
     </style>
 </head>
 <body>
 
     <h1>Kath Baath</h1>
-    <p>Click the word to see translation & hear pronunciation</p>
+    <p>Click the word to see & hear translation</p>
 
     <div id="words-container">
 
@@ -123,20 +108,17 @@
     </div>
 
     <div class="nav-buttons">
-        <button onclick="prevWord()" id="prev-btn" disabled>◀️</button>
-        <button onclick="nextWord()" id="next-btn" disabled>▶️</button>
+        <button onclick="prevWord()" id="prev-btn" disabled>Previous</button>
+        <button onclick="nextWord()" id="next-btn">Next</button>
     </div>
 
     <script>
         let currentWord = 0;
         const totalWords = 5;
-        let revealedTranslations = new Array(totalWords).fill(false); // Track revealed translations
 
         function revealTranslation(index) {
             document.getElementById(`translation-${index}`).style.display = "block";
-            playAudio(index); // Automatically play audio
-            revealedTranslations[index] = true; // Mark translation as revealed
-            updateNextButton(); // Ensure "Next" stays active for revealed words
+            playAudio(index); // Automatically play audio when translation appears
         }
 
         function playAudio(index) {
@@ -148,7 +130,7 @@
             document.getElementById(`word-${index}`).classList.add('active');
 
             document.getElementById("prev-btn").disabled = (index === 0);
-            updateNextButton(); // Ensure "Next" button is correctly updated
+            document.getElementById("next-btn").disabled = (index === totalWords - 1);
         }
 
         function nextWord() {
@@ -163,10 +145,6 @@
                 currentWord--;
                 showWord(currentWord);
             }
-        }
-
-        function updateNextButton() {
-            document.getElementById("next-btn").disabled = !revealedTranslations[currentWord];
         }
     </script>
 
