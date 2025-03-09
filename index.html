@@ -11,13 +11,15 @@
             margin: 20px;
         }
         .word-container {
-            margin: 20px 0;
+            display: none; /* Hide all words initially */
+        }
+        .word-container.active {
+            display: block; /* Show only the active word */
         }
         img {
             width: 300px;
             height: auto;
-            display: block;
-            margin: 0 auto 10px;
+            margin-bottom: 10px;
         }
         .word {
             background-color: #007bff;
@@ -30,61 +32,97 @@
             margin: 10px auto;
             width: 200px;
         }
-        .word.disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
         .translation {
             display: none;
             font-size: 18px;
             color: green;
             margin-top: 10px;
         }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
     <h1>Learn Kashmiri</h1>
-    <p>Click on the words below to reveal their Kashmiri translations.</p>
+    <p>Click the word to reveal its translation. Use the "Next" button to move forward.</p>
 
     <div id="words-container">
-        <div class="word-container">
-            <img src="https://via.placeholder.com/300" alt="Apple"> <!-- Replace with real image -->
+
+        <div class="word-container active" id="word-0">
+            <img src="apple.jpg" alt="Apple">  <!-- Replace with real image -->
             <button class="word" onclick="revealTranslation(0)">Apple</button>
             <p class="translation" id="translation-0">🍎 Tsoonth (تسونتھ)</p>
         </div>
 
-        <div class="word-container">
-            <img src="https://via.placeholder.com/300" alt="Mother"> <!-- Replace with real image -->
-            <button class="word disabled" onclick="revealTranslation(1)">Mother</button>
+        <div class="word-container" id="word-1">
+            <img src="mother.jpg" alt="Mother">  <!-- Replace with real image -->
+            <button class="word" onclick="revealTranslation(1)">Mother</button>
             <p class="translation" id="translation-1">👩‍👦 Maej (ماج)</p>
         </div>
 
-        <div class="word-container">
-            <img src="https://via.placeholder.com/300" alt="Thief"> <!-- Replace with real image -->
-            <button class="word disabled" onclick="revealTranslation(2)">Thief</button>
+        <div class="word-container" id="word-2">
+            <img src="thief.jpg" alt="Thief">  <!-- Replace with real image -->
+            <button class="word" onclick="revealTranslation(2)">Thief</button>
             <p class="translation" id="translation-2">🦹‍♂️ Tsoor (چور)</p>
         </div>
 
-        <div class="word-container">
-            <img src="https://via.placeholder.com/300" alt="Work"> <!-- Replace with real image -->
-            <button class="word disabled" onclick="revealTranslation(3)">Work</button>
+        <div class="word-container" id="word-3">
+            <img src="work.jpg" alt="Work">  <!-- Replace with real image -->
+            <button class="word" onclick="revealTranslation(3)">Work</button>
             <p class="translation" id="translation-3">💼 Kaem (کام)</p>
         </div>
 
-        <div class="word-container">
-            <img src="https://via.placeholder.com/300" alt="Apricot"> <!-- Replace with real image -->
-            <button class="word disabled" onclick="revealTranslation(4)">Apricot</button>
+        <div class="word-container" id="word-4">
+            <img src="apricot.jpg" alt="Apricot">  <!-- Replace with real image -->
+            <button class="word" onclick="revealTranslation(4)">Apricot</button>
             <p class="translation" id="translation-4">🍑 Tsyer (څیر)</p>
         </div>
+
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="prevWord()" id="prev-btn" disabled>⬅️ Back</button>
+        <button onclick="nextWord()" id="next-btn">Next ➡️</button>
     </div>
 
     <script>
+        let currentWord = 0;
+        const totalWords = 5;
+
         function revealTranslation(index) {
             document.getElementById(`translation-${index}`).style.display = "block";
-            let words = document.querySelectorAll('.word');
-            if (index + 1 < words.length) {
-                words[index + 1].classList.remove('disabled');
+        }
+
+        function showWord(index) {
+            // Hide all words
+            document.querySelectorAll('.word-container').forEach((el) => el.classList.remove('active'));
+            // Show the selected word
+            document.getElementById(`word-${index}`).classList.add('active');
+
+            // Enable/disable navigation buttons
+            document.getElementById("prev-btn").disabled = (index === 0);
+            document.getElementById("next-btn").disabled = (index === totalWords - 1);
+        }
+
+        function nextWord() {
+            if (currentWord < totalWords - 1) {
+                currentWord++;
+                showWord(currentWord);
+            }
+        }
+
+        function prevWord() {
+            if (currentWord > 0) {
+                currentWord--;
+                showWord(currentWord);
             }
         }
     </script>
