@@ -38,6 +38,16 @@
             color: green;
             margin-top: 10px;
         }
+        .audio-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            display: none;
+            margin-top: 10px;
+        }
         .nav-buttons {
             margin-top: 20px;
         }
@@ -57,33 +67,43 @@
     <div id="words-container">
 
         <div class="word-container active" id="word-0">
-            <img src="apple.jpg" alt="Apple">  <!-- Replace with real image -->
+            <img src="apple.jpg" alt="Apple">
             <button class="word" onclick="revealTranslation(0)">Apple</button>
             <p class="translation" id="translation-0">🍎 Tsoonth (تسونتھ)</p>
+            <button class="audio-btn" id="audio-btn-0" onclick="playAudio(0)">🔊 Listen</button>
+            <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-1">
-            <img src="mother.jpg" alt="Mother">  <!-- Replace with real image -->
+            <img src="mother.jpg" alt="Mother">
             <button class="word" onclick="revealTranslation(1)">Mother</button>
             <p class="translation" id="translation-1">👩‍👦 Maej (ماج)</p>
+            <button class="audio-btn" id="audio-btn-1" onclick="playAudio(1)">🔊 Listen</button>
+            <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-2">
-            <img src="thief.jpg" alt="Thief">  <!-- Replace with real image -->
+            <img src="thief.jpg" alt="Thief">
             <button class="word" onclick="revealTranslation(2)">Thief</button>
             <p class="translation" id="translation-2">🦹‍♂️ Tsoor (چور)</p>
+            <button class="audio-btn" id="audio-btn-2" onclick="playAudio(2)">🔊 Listen</button>
+            <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-3">
-            <img src="work.jpg" alt="Work">  <!-- Replace with real image -->
+            <img src="work.jpg" alt="Work">
             <button class="word" onclick="revealTranslation(3)">Work</button>
             <p class="translation" id="translation-3">💼 Kaem (کام)</p>
+            <button class="audio-btn" id="audio-btn-3" onclick="playAudio(3)">🔊 Listen</button>
+            <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
         </div>
 
         <div class="word-container" id="word-4">
-            <img src="apricot.jpg" alt="Apricot">  <!-- Replace with real image -->
+            <img src="apricot.jpg" alt="Apricot">
             <button class="word" onclick="revealTranslation(4)">Apricot</button>
             <p class="translation" id="translation-4">🍑 Tsyer (څیر)</p>
+            <button class="audio-btn" id="audio-btn-4" onclick="playAudio(4)">🔊 Listen</button>
+            <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
         </div>
 
     </div>
@@ -99,15 +119,17 @@
 
         function revealTranslation(index) {
             document.getElementById(`translation-${index}`).style.display = "block";
+            document.getElementById(`audio-btn-${index}`).style.display = "block"; // Show audio button
+        }
+
+        function playAudio(index) {
+            document.getElementById(`audio-${index}`).play();
         }
 
         function showWord(index) {
-            // Hide all words
             document.querySelectorAll('.word-container').forEach((el) => el.classList.remove('active'));
-            // Show the selected word
             document.getElementById(`word-${index}`).classList.add('active');
 
-            // Enable/disable navigation buttons
             document.getElementById("prev-btn").disabled = (index === 0);
             document.getElementById("next-btn").disabled = (index === totalWords - 1);
         }
