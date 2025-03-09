@@ -8,20 +8,22 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0px 20px;
+      margin: 0;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start; /* Align content to the top */
+      min-height: 100vh;
     }
     h1 {
       font-size: 3.5em;
-      color: #007bff; /* Same blue as button */
-      margin-top: 0px;
+      color: #007bff;
+      margin-top: 20px;   /* Reduced top margin */
+      margin-bottom: 5px; /* Reduced bottom margin */
     }
     p {
-      margin-top: 0px;
+      margin: 0;
       margin-bottom: 10px;
     }
     .word-container {
@@ -198,7 +200,6 @@
     }
 
     function updateNavButtons() {
-      // Disable "Previous" if on the first word and "Next" if on the last word
       document.getElementById('prev-btn').disabled = currentWord === 0;
       document.getElementById('next-btn').disabled = currentWord === totalWords - 1;
     }
