@@ -13,25 +13,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* Align content to the top */
+      justify-content: flex-start;
       min-height: 100vh;
     }
 
-    /* Title styling */
     h1 {
       font-size: 3.5em;
-      color: #007bff; /* Same blue as the button */
-      margin-top: 10px;   /* Adjust to move title down or up */
-      margin-bottom: 10px; /* Adjust to increase/decrease space after title */
+      color: #007bff;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
-    /* Subtitle/description styling */
     p {
       margin: 5px;
-      margin-bottom: 30px; /* Increase/decrease for more/less space before images */
+      margin-bottom: 30px;
     }
 
-    /* Container for each word */
     .word-container {
       display: none;
       text-align: center;
@@ -40,14 +37,12 @@
       display: block;
     }
 
-    /* Image styling */
     img {
       width: 300px;
       height: auto;
       margin-bottom: 20px;
     }
 
-    /* Button for the English word */
     .word {
       background-color: #007bff;
       color: white;
@@ -61,7 +56,6 @@
       border-radius: 5px;
     }
 
-    /* Hidden translation text */
     .translation {
       visibility: hidden;
       font-size: 22px;
@@ -71,7 +65,25 @@
       min-height: 30px;
     }
 
-    /* Navigation buttons */
+    /* New styles for record button and feedback */
+    .record-btn {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .feedback {
+      font-size: 18px;
+      color: #333;
+      margin-top: 10px;
+      min-height: 24px;
+    }
+
     .nav-buttons {
       margin-top: 30px;
     }
@@ -96,6 +108,9 @@
       <button class="word" onclick="revealTranslation(0)">Apple</button>
       <p class="translation" id="translation-0" onclick="playAudio(0)">ʦūⁿṭ</p>
       <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
+      <!-- New record button and feedback display -->
+      <button class="record-btn" id="record-btn-0" onclick="toggleRecording(0)">Record</button>
+      <p class="feedback" id="feedback-0"></p>
     </div>
 
     <!-- Word 1 -->
@@ -104,6 +119,8 @@
       <button class="word" onclick="revealTranslation(1)">Mother</button>
       <p class="translation" id="translation-1" onclick="playAudio(1)">mə̄j</p>
       <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
+      <button class="record-btn" id="record-btn-1" onclick="toggleRecording(1)">Record</button>
+      <p class="feedback" id="feedback-1"></p>
     </div>
 
     <!-- Word 2 -->
@@ -112,6 +129,8 @@
       <button class="word" onclick="revealTranslation(2)">Thief</button>
       <p class="translation" id="translation-2" onclick="playAudio(2)">ʦūr</p>
       <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
+      <button class="record-btn" id="record-btn-2" onclick="toggleRecording(2)">Record</button>
+      <p class="feedback" id="feedback-2"></p>
     </div>
 
     <!-- Word 3 -->
@@ -120,6 +139,8 @@
       <button class="word" onclick="revealTranslation(3)">Work</button>
       <p class="translation" id="translation-3" onclick="playAudio(3)">kə̄m</p>
       <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
+      <button class="record-btn" id="record-btn-3" onclick="toggleRecording(3)">Record</button>
+      <p class="feedback" id="feedback-3"></p>
     </div>
 
     <!-- Word 4 -->
@@ -128,6 +149,8 @@
       <button class="word" onclick="revealTranslation(4)">Apricot</button>
       <p class="translation" id="translation-4" onclick="playAudio(4)">ʦēr</p>
       <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
+      <button class="record-btn" id="record-btn-4" onclick="toggleRecording(4)">Record</button>
+      <p class="feedback" id="feedback-4"></p>
     </div>
 
     <!-- Word 5 -->
@@ -136,6 +159,8 @@
       <button class="word" onclick="revealTranslation(5)">Cucumber</button>
       <p class="translation" id="translation-5" onclick="playAudio(5)">lə̄r</p>
       <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02376.mp3"></audio>
+      <button class="record-btn" id="record-btn-5" onclick="toggleRecording(5)">Record</button>
+      <p class="feedback" id="feedback-5"></p>
     </div>
 
     <!-- Word 6 -->
@@ -144,6 +169,8 @@
       <button class="word" onclick="revealTranslation(6)">Stupid</button>
       <p class="translation" id="translation-6" onclick="playAudio(6)">bēkιl</p>
       <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00643.mp3"></audio>
+      <button class="record-btn" id="record-btn-6" onclick="toggleRecording(6)">Record</button>
+      <p class="feedback" id="feedback-6"></p>
     </div>
 
     <!-- Word 7 -->
@@ -152,6 +179,8 @@
       <button class="word" onclick="revealTranslation(7)">Darkness</button>
       <p class="translation" id="translation-7" onclick="playAudio(7)">anigaṭι</p>
       <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00220.mp3"></audio>
+      <button class="record-btn" id="record-btn-7" onclick="toggleRecording(7)">Record</button>
+      <p class="feedback" id="feedback-7"></p>
     </div>
 
     <!-- Word 8 -->
@@ -160,6 +189,8 @@
       <button class="word" onclick="revealTranslation(8)">Ladder</button>
       <p class="translation" id="translation-8" onclick="playAudio(8)">hēr</p>
       <audio id="audio-8" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01521.mp3"></audio>
+      <button class="record-btn" id="record-btn-8" onclick="toggleRecording(8)">Record</button>
+      <p class="feedback" id="feedback-8"></p>
     </div>
 
     <!-- Word 9 -->
@@ -168,6 +199,8 @@
       <button class="word" onclick="revealTranslation(9)">Finger</button>
       <p class="translation" id="translation-9" onclick="playAudio(9)">uⁿgij</p>
       <audio id="audio-9" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04402.mp3"></audio>
+      <button class="record-btn" id="record-btn-9" onclick="toggleRecording(9)">Record</button>
+      <p class="feedback" id="feedback-9"></p>
     </div>
 
     <!-- Word 10 -->
@@ -176,6 +209,8 @@
       <button class="word" onclick="revealTranslation(10)">Blind</button>
       <p class="translation" id="translation-10" onclick="playAudio(10)">on</p>
       <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
+      <button class="record-btn" id="record-btn-10" onclick="toggleRecording(10)">Record</button>
+      <p class="feedback" id="feedback-10"></p>
     </div>
 
     <!-- Word 11 -->
@@ -184,6 +219,8 @@
       <button class="word" onclick="revealTranslation(11)">Bread</button>
       <p class="translation" id="translation-11" onclick="playAudio(11)">ʦͻci</p>
       <audio id="audio-11" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
+      <button class="record-btn" id="record-btn-11" onclick="toggleRecording(11)">Record</button>
+      <p class="feedback" id="feedback-11"></p>
     </div>
     
     <!-- Word 12 -->
@@ -192,6 +229,8 @@
       <button class="word" onclick="revealTranslation(12)">Mouth</button>
       <p class="translation" id="translation-12" onclick="playAudio(12)">cōⁿṭʰ</p>
       <audio id="audio-12" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00811.mp3"></audio>
+      <button class="record-btn" id="record-btn-12" onclick="toggleRecording(12)">Record</button>
+      <p class="feedback" id="feedback-12"></p>
     </div>
     
     <!-- Word 13 -->
@@ -200,6 +239,8 @@
       <button class="word" onclick="revealTranslation(13)">Bridge</button>
       <p class="translation" id="translation-13" onclick="playAudio(13)">kǝdιl</p>
       <audio id="audio-13" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01880.mp3"></audio>
+      <button class="record-btn" id="record-btn-13" onclick="toggleRecording(13)">Record</button>
+      <p class="feedback" id="feedback-13"></p>
     </div>
   </div>
 
@@ -209,37 +250,29 @@
   </div>
 
   <script>
+    // Navigation & Translation Functions
     let currentWord = 0;
     const totalWords = 14;
-
-    // Track whether each word's translation has been revealed
     let revealedTranslations = new Array(totalWords).fill(false);
 
-    // Reveal translation for the given index
     function revealTranslation(index) {
       document.getElementById(`translation-${index}`).style.visibility = "visible";
-      revealedTranslations[index] = true;   // Mark as revealed
+      revealedTranslations[index] = true;
       playAudio(index);
-      updateNavButtons();                  // Re-check button states
+      updateNavButtons();
     }
 
-    // Play the audio for the given index
     function playAudio(index) {
       document.getElementById(`audio-${index}`).play();
     }
 
-    // Show the word container for the given index
     function showWord(index) {
       document.querySelectorAll('.word-container').forEach(el => el.classList.remove('active'));
       document.getElementById(`word-${index}`).classList.add('active');
     }
 
-    // Update the disabled state of the navigation buttons
     function updateNavButtons() {
-      // Disable "Previous" if on the first word
       document.getElementById('prev-btn').disabled = (currentWord === 0);
-
-      // Disable "Next" if on the last word OR if the current word isn't revealed yet
       if (currentWord === totalWords - 1) {
         document.getElementById('next-btn').disabled = true;
       } else {
@@ -247,7 +280,6 @@
       }
     }
 
-    // Go to the next word if available
     function nextWord() {
       if (currentWord < totalWords - 1) {
         currentWord++;
@@ -256,7 +288,6 @@
       }
     }
 
-    // Go to the previous word if available
     function prevWord() {
       if (currentWord > 0) {
         currentWord--;
@@ -265,8 +296,72 @@
       }
     }
 
-    // Initialize the navigation buttons on page load
     updateNavButtons();
+
+    // Recording Functions
+    let mediaRecorder;
+    let audioChunks = [];
+
+    function toggleRecording(wordIndex) {
+      const recordBtn = document.getElementById(`record-btn-${wordIndex}`);
+      if (recordBtn.textContent === "Record") {
+        startRecording(wordIndex);
+        recordBtn.textContent = "Stop";
+      } else {
+        stopRecording(wordIndex);
+        recordBtn.textContent = "Record";
+      }
+    }
+
+    function startRecording(wordIndex) {
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          mediaRecorder = new MediaRecorder(stream);
+          audioChunks = [];
+          mediaRecorder.ondataavailable = event => {
+            if (event.data.size > 0) {
+              audioChunks.push(event.data);
+            }
+          };
+          mediaRecorder.start();
+        })
+        .catch(err => {
+          console.error("Error accessing microphone:", err);
+          alert("Microphone access denied or not available.");
+        });
+    }
+
+    function stopRecording(wordIndex) {
+      if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+        mediaRecorder.onstop = () => {
+          const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+          sendAudioToServer(wordIndex, audioBlob);
+        };
+      }
+    }
+
+    function sendAudioToServer(wordIndex, audioBlob) {
+      const formData = new FormData();
+      formData.append("audio", audioBlob, "recording.webm");
+      formData.append("wordIndex", wordIndex);
+
+      // Replace with your actual backend endpoint URL
+      fetch("https://your-backend-server.com/compare_audio", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // data should include 'score' and 'feedback'
+        document.getElementById(`feedback-${wordIndex}`).textContent =
+          `Score: ${data.score}% - ${data.feedback}`;
+      })
+      .catch(err => {
+        console.error("Error sending audio:", err);
+        document.getElementById(`feedback-${wordIndex}`).textContent = "Error processing recording.";
+      });
+    }
   </script>
 
 </body>
