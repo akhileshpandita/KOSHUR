@@ -21,14 +21,14 @@
     h1 {
       font-size: 3.5em;
       color: #007bff; /* Same blue as the button */
-      margin-top: 10px;   /* Adjust to move title down or up */
-      margin-bottom: 10px; /* Adjust to increase/decrease space after title */
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     /* Subtitle/description styling */
     p {
       margin: 5px;
-      margin-bottom: 30px; /* Increase/decrease for more/less space before images */
+      margin-bottom: 30px;
     }
 
     /* Container for each word */
@@ -81,6 +81,19 @@
       font-size: 16px;
       cursor: pointer;
     }
+    
+    /* Style for the Practice button (optional) */
+    .practice {
+      background-color: #28a745;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -96,6 +109,7 @@
       <button class="word" onclick="revealTranslation(0)">Apple</button>
       <p class="translation" id="translation-0" onclick="playAudio(0)">ʦūⁿṭ</p>
       <audio id="audio-0" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04373.mp3"></audio>
+      <button class="practice" onclick="startPractice(0)">Practice</button>
     </div>
 
     <!-- Word 1 -->
@@ -104,6 +118,7 @@
       <button class="word" onclick="revealTranslation(1)">Mother</button>
       <p class="translation" id="translation-1" onclick="playAudio(1)">mə̄j</p>
       <audio id="audio-1" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02574.mp3"></audio>
+      <button class="practice" onclick="startPractice(1)">Practice</button>
     </div>
 
     <!-- Word 2 -->
@@ -112,6 +127,7 @@
       <button class="word" onclick="revealTranslation(2)">Thief</button>
       <p class="translation" id="translation-2" onclick="playAudio(2)">ʦūr</p>
       <audio id="audio-2" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04377.mp3"></audio>
+      <button class="practice" onclick="startPractice(2)">Practice</button>
     </div>
 
     <!-- Word 3 -->
@@ -120,6 +136,7 @@
       <button class="word" onclick="revealTranslation(3)">Work</button>
       <p class="translation" id="translation-3" onclick="playAudio(3)">kə̄m</p>
       <audio id="audio-3" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01758.mp3"></audio>
+      <button class="practice" onclick="startPractice(3)">Practice</button>
     </div>
 
     <!-- Word 4 -->
@@ -128,6 +145,7 @@
       <button class="word" onclick="revealTranslation(4)">Apricot</button>
       <p class="translation" id="translation-4" onclick="playAudio(4)">ʦēr</p>
       <audio id="audio-4" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04325.mp3"></audio>
+      <button class="practice" onclick="startPractice(4)">Practice</button>
     </div>
 
     <!-- Word 5 -->
@@ -136,6 +154,7 @@
       <button class="word" onclick="revealTranslation(5)">Cucumber</button>
       <p class="translation" id="translation-5" onclick="playAudio(5)">lə̄r</p>
       <audio id="audio-5" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02376.mp3"></audio>
+      <button class="practice" onclick="startPractice(5)">Practice</button>
     </div>
 
     <!-- Word 6 -->
@@ -144,6 +163,7 @@
       <button class="word" onclick="revealTranslation(6)">Stupid</button>
       <p class="translation" id="translation-6" onclick="playAudio(6)">bēkιl</p>
       <audio id="audio-6" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00643.mp3"></audio>
+      <button class="practice" onclick="startPractice(6)">Practice</button>
     </div>
 
     <!-- Word 7 -->
@@ -152,6 +172,7 @@
       <button class="word" onclick="revealTranslation(7)">Darkness</button>
       <p class="translation" id="translation-7" onclick="playAudio(7)">anigaṭι</p>
       <audio id="audio-7" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00220.mp3"></audio>
+      <button class="practice" onclick="startPractice(7)">Practice</button>
     </div>
 
     <!-- Word 8 -->
@@ -160,6 +181,7 @@
       <button class="word" onclick="revealTranslation(8)">Ladder</button>
       <p class="translation" id="translation-8" onclick="playAudio(8)">hēr</p>
       <audio id="audio-8" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01521.mp3"></audio>
+      <button class="practice" onclick="startPractice(8)">Practice</button>
     </div>
 
     <!-- Word 9 -->
@@ -168,6 +190,7 @@
       <button class="word" onclick="revealTranslation(9)">Finger</button>
       <p class="translation" id="translation-9" onclick="playAudio(9)">uⁿgij</p>
       <audio id="audio-9" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04402.mp3"></audio>
+      <button class="practice" onclick="startPractice(9)">Practice</button>
     </div>
 
     <!-- Word 10 -->
@@ -176,6 +199,7 @@
       <button class="word" onclick="revealTranslation(10)">Blind</button>
       <p class="translation" id="translation-10" onclick="playAudio(10)">on</p>
       <audio id="audio-10" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/02989.mp3"></audio>
+      <button class="practice" onclick="startPractice(10)">Practice</button>
     </div>
 
     <!-- Word 11 -->
@@ -184,6 +208,7 @@
       <button class="word" onclick="revealTranslation(11)">Bread</button>
       <p class="translation" id="translation-11" onclick="playAudio(11)">ʦͻci</p>
       <audio id="audio-11" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/04354.mp3"></audio>
+      <button class="practice" onclick="startPractice(11)">Practice</button>
     </div>
     
     <!-- Word 12 -->
@@ -192,6 +217,7 @@
       <button class="word" onclick="revealTranslation(12)">Mouth</button>
       <p class="translation" id="translation-12" onclick="playAudio(12)">cōⁿṭʰ</p>
       <audio id="audio-12" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/00811.mp3"></audio>
+      <button class="practice" onclick="startPractice(12)">Practice</button>
     </div>
     
     <!-- Word 13 -->
@@ -200,6 +226,7 @@
       <button class="word" onclick="revealTranslation(13)">Bridge</button>
       <p class="translation" id="translation-13" onclick="playAudio(13)">kǝdιl</p>
       <audio id="audio-13" src="https://dsal.uchicago.edu/dictionaries/hassan/audio/01880.mp3"></audio>
+      <button class="practice" onclick="startPractice(13)">Practice</button>
     </div>
   </div>
 
@@ -211,43 +238,34 @@
   <script>
     let currentWord = 0;
     const totalWords = 14;
-
-    // Track whether each word's translation has been revealed
     let revealedTranslations = new Array(totalWords).fill(false);
 
-    // Reveal translation for the given index
+    // Reveal translation for a given index
     function revealTranslation(index) {
       document.getElementById(`translation-${index}`).style.visibility = "visible";
-      revealedTranslations[index] = true;   // Mark as revealed
+      revealedTranslations[index] = true;
       playAudio(index);
-      updateNavButtons();                  // Re-check button states
+      updateNavButtons();
     }
 
-    // Play the audio for the given index
+    // Play the audio for a given index
     function playAudio(index) {
       document.getElementById(`audio-${index}`).play();
     }
 
-    // Show the word container for the given index
+    // Show a specific word container by index
     function showWord(index) {
       document.querySelectorAll('.word-container').forEach(el => el.classList.remove('active'));
       document.getElementById(`word-${index}`).classList.add('active');
     }
 
-    // Update the disabled state of the navigation buttons
+    // Update the navigation buttons' disabled state
     function updateNavButtons() {
-      // Disable "Previous" if on the first word
       document.getElementById('prev-btn').disabled = (currentWord === 0);
-
-      // Disable "Next" if on the last word OR if the current word isn't revealed yet
-      if (currentWord === totalWords - 1) {
-        document.getElementById('next-btn').disabled = true;
-      } else {
-        document.getElementById('next-btn').disabled = !revealedTranslations[currentWord];
-      }
+      document.getElementById('next-btn').disabled = (currentWord === totalWords - 1) || (!revealedTranslations[currentWord]);
     }
 
-    // Go to the next word if available
+    // Go to next word
     function nextWord() {
       if (currentWord < totalWords - 1) {
         currentWord++;
@@ -256,7 +274,7 @@
       }
     }
 
-    // Go to the previous word if available
+    // Go to previous word
     function prevWord() {
       if (currentWord > 0) {
         currentWord--;
@@ -265,10 +283,63 @@
       }
     }
 
-    // Initialize the navigation buttons on page load
+    // Initialize navigation buttons on page load
     updateNavButtons();
-  </script>
 
+    // --- New Recording Functionality for "Practice" ---
+    let practiceRecorder;
+    let practiceChunks = [];
+    let isRecording = false;
+
+    // Function to start/stop recording for a given word index
+    function startPractice(wordIndex) {
+      const wordContainer = document.getElementById(`word-${wordIndex}`);
+      const wordButton = wordContainer.querySelector('.word');
+      const wordText = wordButton.innerText.trim();
+
+      if (!isRecording) {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+          .then(stream => {
+            practiceRecorder = new MediaRecorder(stream);
+            practiceChunks = [];
+            practiceRecorder.ondataavailable = event => {
+              if (event.data.size > 0) {
+                practiceChunks.push(event.data);
+              }
+            };
+            practiceRecorder.onstop = () => {
+              const audioBlob = new Blob(practiceChunks, { type: 'audio/webm' });
+              const formData = new FormData();
+              formData.append("word", wordText);
+              formData.append("audio", audioBlob, "recording.webm");
+
+              fetch("https://koshur-backend-150964387206.us-central1.run.app/compare_audio", {
+                method: "POST",
+                body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
+                alert(`Score: ${data.score}\nFeedback: ${data.feedback}`);
+              })
+              .catch(error => {
+                console.error("Error sending recording:", error);
+                alert("Error processing recording.");
+              });
+            };
+
+            practiceRecorder.start();
+            isRecording = true;
+            alert("Recording started. Click 'Practice' again to stop.");
+          })
+          .catch(err => {
+            console.error("Error accessing microphone:", err);
+            alert("Microphone access is required for recording.");
+          });
+      } else {
+        practiceRecorder.stop();
+        isRecording = false;
+      }
+    }
+  </script>
 </body>
 </html>
-
